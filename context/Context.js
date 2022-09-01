@@ -9,6 +9,7 @@ import filter from "./websocket";
 
  const KrakenContext = createContext()
 
+ // Biraz daha gelismis yapmak istedigin icin  Context Yaptim Ama datayi yavaslatiyor,
 const KrakenContextProvider =({children})=>{
 const [krakenData,setKrakenData] = useState(filter())
 
@@ -17,11 +18,12 @@ useEffect(()=>{
 
 setTimeout(() => {
   
-  setKrakenData(filter()) // set intervali 1000
+  setKrakenData(filter()) 
 }, 1000);
 
 
-},[krakenData])
+
+},[])
 
 
 let value ={
